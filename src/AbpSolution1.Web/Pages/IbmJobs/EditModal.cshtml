@@ -1,0 +1,31 @@
+@page
+@using AbpSolution1.IbmJobs
+@using AbpSolution1.Localization
+@using Microsoft.Extensions.Localization
+@model AbpSolution1.Web.Pages.IbmJobs.EditModalModel
+@inject IStringLocalizer<AbpSolution1Resource> L
+@{
+    Layout = null;
+}
+<form asp-page="/IbmJobs/EditModal">
+    <abp-modal>
+        <abp-modal-header title="Editar Job IBM"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="IbmJob.NomeJob" />
+            <abp-input asp-for="IbmJob.JobStream" />
+            <abp-input asp-for="IbmJob.Workstation" />
+            <abp-input asp-for="IbmJob.Aplicacao" />
+            <abp-input asp-for="IbmJob.PrimeiroResponsavel" />
+            <abp-input asp-for="IbmJob.SegundoResponsavel" />
+            <abp-input asp-for="IbmJob.TerceiroResponsavel" />
+            <abp-input asp-for="IbmJob.HorarioAcionamento" />
+            <abp-select asp-for="IbmJob.Criticidade" asp-items="Model.CriticidadeList" />
+            <div class="mb-3">
+                <label asp-for="IbmJob.Descricao" class="form-label">Descrição</label>
+                <textarea asp-for="IbmJob.Descricao" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="IbmJob.Descricao" class="text-danger"></span>
+            </div>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

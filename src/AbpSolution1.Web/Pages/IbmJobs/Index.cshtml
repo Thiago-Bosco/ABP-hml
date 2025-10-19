@@ -1,0 +1,28 @@
+@page "/ibm-jobs"
+@using AbpSolution1.IbmJobs
+@using AbpSolution1.Localization
+@using Microsoft.Extensions.Localization
+@model AbpSolution1.Web.Pages.IbmJobs.IndexModel
+@inject IStringLocalizer<AbpSolution1Resource> L
+@{
+    ViewBag.PageTitle = "IBM Jobs";
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>IBM Jobs</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                <abp-button id="NewIbmJobButton"
+                           text="Novo Job"
+                           icon="plus"
+                           button-type="Primary"/>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="IbmJobsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
